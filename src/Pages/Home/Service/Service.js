@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import "./Service.css";
 
 const Service = ({ service }) => {
@@ -14,10 +15,10 @@ const Service = ({ service }) => {
           <p>
             <small>{description}</small>
           </p>
-          <a href="#" className="btn btn-primary m-3">
+          <Button href="#" className="btn btn-primary m-3">
             {" "}
             Book: {name}
-          </a>
+          </Button>
         </section>
       </div>
     </div>
