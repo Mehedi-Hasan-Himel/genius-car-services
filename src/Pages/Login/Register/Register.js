@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -25,16 +26,9 @@ const Register = () => {
     createUserWithEmailAndPassword(email, password);
   };
   return (
-    <div>
-      <h2>Please Register.</h2>
-      <Form className="container w-50 mx-auto">
-        <Form.Group className="mb-3">
-          <Form.Label>Your Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter Your Name" required />
-          <Form.Text className="text-muted">
-            We'll never share your name with anyone else.
-          </Form.Text>
-        </Form.Group>
+    <div className="container mx-auto w-50">
+      <h2 className="mt-5 text-primary">Please Register.</h2>
+      <Form className="container mx-auto">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
@@ -44,9 +38,6 @@ const Register = () => {
             placeholder="Enter email"
             required
           />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -80,6 +71,7 @@ const Register = () => {
           Please Login
         </Link>
       </p>
+      <SocialLogin></SocialLogin>
     </div>
   );
 };
